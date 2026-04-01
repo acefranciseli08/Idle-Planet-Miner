@@ -248,6 +248,60 @@ export const ITEMS_MAP = {
       { key: 'TELESCOPE', quantity: 1 },
     ],
   },
+
+  NUCLEAR_REACTOR: {
+    key: 'NUCLEAR_REACTOR',
+    name: 'Nuclear Reactor',
+    requirements: [
+      { key: 'IRIDIUM_BAR', quantity: 120 },
+      { key: 'NUCLEAR_CAPSULE', quantity: 1 },
+    ],
+  },
+
+  INERTON_ALLOY: {
+    key: 'INERTON_ALLOY',
+    name: 'Inerton Alloy',
+    requirements: [],
+  },
+
+  QUADIUM_ALLOY: {
+    key: 'QUADIUM_ALLOY',
+    name: 'Quadium Alloy',
+    requirements: [],
+  },
+
+  COLLIDER: {
+    key: 'COLLIDER',
+    name: 'Collider',
+    requirements: [
+      { key: 'INERTON_ALLOY', quantity: 200 },
+      { key: 'QUADIUM_ALLOY', quantity: 40 },
+    ],
+  },
+
+  GRAVITY_CHAMBER: {
+    key: 'GRAVITY_CHAMBER',
+    name: 'Gravity Chamber',
+    requirements: [
+      { key: 'ADVANCED_COMPUTER', quantity: 24 },
+      { key: 'NUCLEAR_REACTOR', quantity: 1 },
+    ],
+  },
+
+  SCRITH_ALLOY: {
+    key: 'SCRITH_ALLOY',
+    name: 'Scrith Alloy',
+    requirements: [],
+  },
+
+  ROBOT: {
+    key: 'ROBOT',
+    name: 'Robot',
+    requirements: [
+      { key: 'SCRITH_ALLOY', quantity: 120 },
+      { key: 'ACCUMULATOR', quantity: 36 },
+    ],
+  },
 }
 
 export const ITEM_LIST = Object.values(ITEMS_MAP)

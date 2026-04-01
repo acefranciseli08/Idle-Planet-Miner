@@ -13,6 +13,10 @@ const ItemDetails = ({ selectedItem }) => {
     // reset input when selection changes
     setInputValue(1)
     setQuantity(1)
+    // immediately recalculate to ensure UI updates even if quantity stays 1
+    if (selectedItem) {
+      calculateTotal()
+    }
   }, [selectedItem])
 
   useEffect(() => {
@@ -21,7 +25,7 @@ const ItemDetails = ({ selectedItem }) => {
     } else {
       setBaseTotals(null)
     }
-  }, [quantity, selectedItem])
+  }, [quantity])
 
   const calculateCost = (item, valuesHolder, multiplier = 1) => {
     item?.requirements?.forEach((req) => {
