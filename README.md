@@ -1,16 +1,62 @@
-# React + Vite
+# Idle Planet Miner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive cost calculation tool for crafting/mining games. Calculates all material requirements for complex items with nested dependencies.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Recursive Cost Calculation**: Automatically drills down through all nested sub-requirements
+- **Quantity Multiplier Propagation**: Correctly scales nested requirements based on parent quantities
+- **Debounced Input**: 300ms debounce on quantity changes for responsive UI without excessive re-renders
+- **Cost Breakdown**: Shows all required materials with their quantities
+- **Deduction Tracking**: Track and deduct materials as you consume them
+- **Auto-reset on Selection**: Resets input and recalculates when switching items
 
-## React Compiler
+## Recent Updates (v2.0)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- Added new end-game items: Nuclear Reactor, Collider, Gravity Chamber, Robot
+- New base materials: Inerton Alloy, Quadium Alloy, Scrith Alloy
+- Fixed nested requirement/quantity multiplication logic
+- Implemented input debounce for better performance
+- Improved state management on item selection
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React + Vite
+- React Bootstrap (UI components)
+- ES6+ JavaScript
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173 in your browser.
+
+## Build
+
+```bash
+npm run build
+```
+
+## Project Structure
+
+```
+src/
+├── Components/
+│   ├── ItemDetails.jsx      # Main cost calculator component
+│   └── ItemList.jsx         # Item selection list
+├── constants/
+│   └── itemConstants.js     # Item definitions and requirements
+└── App.jsx                  # Main app component
+```
+
+## How It Works
+
+1. Select an item from the list
+2. Enter the quantity you want to craft
+3. View the complete cost breakdown including all nested materials
+4. Optionally deduct materials as you gather them
+
+The calculator uses recursive traversal to compute all sub-requirements, multiplying quantities correctly at each level of the dependency tree.
