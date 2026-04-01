@@ -239,16 +239,6 @@ export const ITEMS_MAP = {
     ],
   },
 
-  SPACE_PROBE: {
-    key: 'SPACE_PROBE',
-    name: 'Space Probe',
-    requirements: [
-      { key: 'SATELLITE_DISH', quantity: 1 },
-      { key: 'SOLAR_PANEL', quantity: 10 },
-      { key: 'TELESCOPE', quantity: 1 },
-    ],
-  },
-
   NUCLEAR_REACTOR: {
     key: 'NUCLEAR_REACTOR',
     name: 'Nuclear Reactor',
@@ -300,6 +290,16 @@ export const ITEMS_MAP = {
     requirements: [
       { key: 'SCRITH_ALLOY', quantity: 120 },
       { key: 'ACCUMULATOR', quantity: 36 },
+    ],
+  },
+
+  SPACE_PROBE: {
+    key: 'SPACE_PROBE',
+    name: 'Space Probe',
+    requirements: [
+      { key: 'SATELLITE_DISH', quantity: 1 },
+      { key: 'SOLAR_PANEL', quantity: 10 },
+      { key: 'TELESCOPE', quantity: 1 },
     ],
   },
 }
